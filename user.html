@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Defined & Standard Functions - Full Demo</title>
+    <style>
+        body{
+            font-family: Arial;
+            background: #f2f2f2;
+            text-align: center;
+        }
+        .box{
+            background: white;
+            width: 450px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        input, button{
+            padding: 8px;
+            margin: 5px;
+        }
+        h2{
+            color: darkblue;
+        }
+        #output{
+            margin-top: 15px;
+            font-weight: bold;
+            color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>User Defined & Standard Function Concepts</h2>
+
+    <input type="number" id="num1" placeholder="Enter First Number"><br>
+    <input type="number" id="num2" placeholder="Enter Second Number"><br>
+
+    <button onclick="performArithmetic()">User Defined: Arithmetic</button>
+    <button onclick="stringOperations()">Standard: String Functions</button>
+    <button onclick="mathOperations()">Standard: Math Functions</button>
+    <button onclick="dateFunction()">Standard: Date Function</button>
+
+    <div id="output"></div>
+</div>
+
+<script>
+    // ================= USER DEFINED FUNCTIONS =================
+    
+    function add(a, b) {
+        return a + b;
+    }
+
+    function subtract(a, b) {
+        return a - b;
+    }
+
+    function multiply(a, b) {
+        return a * b;
+    }
+
+    function divide(a, b) {
+        if (b == 0) {
+            return "Division by zero not allowed";
+        }
+        return a / b;
+    }
+
+    function validateInputs(a, b) {
+        if (isNaN(a) || isNaN(b)) {
+            return false;
+        }
+        return true;
+    }
+
+    function performArithmetic() {
+        let n1 = parseFloat(document.getElementById("num1").value);
+        let n2 = parseFloat(document.getElementById("num2").value);
+
+        if (!validateInputs(n1, n2)) {
+            document.getElementById("output").innerHTML =
+                "Please enter valid numbers!";
+            return;
+        }
+
+        let result = 
+            "Addition = " + add(n1, n2) + "<br>" +
+            "Subtraction = " + subtract(n1, n2) + "<br>" +
+            "Multiplication = " + multiply(n1, n2) + "<br>" +
+            "Division = " + divide(n1, n2);
+
+        document.getElementById("output").innerHTML = result;
+    }
+
+    // ================= STANDARD (BUILT-IN) FUNCTIONS =================
+
+    function stringOperations() {
+        let text = "javascript functions";
+
+        let upper = text.toUpperCase();
+        let length = text.length;
+        let substring = text.substring(0, 10);
+
+        document.getElementById("output").innerHTML =
+            "Original String: " + text + "<br>" +
+            "Uppercase: " + upper + "<br>" +
+            "Length: " + length + "<br>" +
+            "Substring(0,10): " + substring;
+    }
+
+    function mathOperations() {
+        let num = 49;
+
+        let sqrt = Math.sqrt(num);
+        let power = Math.pow(3, 3);
+        let random = Math.floor(Math.random() * 100);
+
+        document.getElementById("output").innerHTML =
+            "Square Root of 49 = " + sqrt + "<br>" +
+            "3 Power 3 = " + power + "<br>" +
+            "Random Number (0-99) = " + random;
+    }
+
+    function dateFunction() {
+        let today = new Date();   // standard Date function
+        document.getElementById("output").innerHTML =
+            "Current Date & Time: " + today;
+    }
+</script>
+
+</body>
+</html>
