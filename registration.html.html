@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SkyHigh Airways - Flight Booking</title>
+</head>
+<body>
+
+    <h1>✈️ SkyHigh Airways Reservation</h1>
+    <p>Please fill in the details below to book your flight for 2026.</p>
+    <hr>
+
+    <!-- Action points to the success page -->
+    <form action="success.html" method="GET">
+
+        <!-- Trip Type (Radio Buttons) -->
+        <fieldset>
+            <legend>Flight Type</legend>
+            <input type="radio" name="triptype" id="oneway" value="oneway" checked>
+            <label for="oneway">One Way</label>
+            
+            <input type="radio" name="triptype" id="roundtrip" value="roundtrip">
+            <label for="roundtrip">Round Trip</label>
+        </fieldset>
+
+        <!-- Flight Details -->
+        <fieldset>
+            <legend>Flight Information</legend>
+            <p>
+                From:<br>
+                <input type="text" name="origin" placeholder="Departure City (e.g. London)" required>
+            </p>
+            <p>
+                To:<br>
+                <input type="text" name="destination" placeholder="Arrival City (e.g. New York)" required>
+            </p>
+            <p>
+                Departure Date:<br>
+                <input type="date" name="depart_date" required>
+            </p>
+            <p>
+                Class:<br>
+                <select name="flight_class">
+                    <option value="economy">Economy</option>
+                    <option value="business">Business</option>
+                    <option value="first">First Class</option>
+                </select>
+            </p>
+        </fieldset>
+
+        <!-- Passenger Details -->
+        <fieldset>
+            <legend>Passenger Information</legend>
+            <p>
+                <input type="text" name="passenger_name" placeholder="Full Name (as per Passport)" required>
+            </p>
+            <p>
+                <input type="tel" name="phone" placeholder="Contact Number" required>
+            </p>
+            <p>
+                <input type="email" name="email" placeholder="Email Address" required>
+            </p>
+            <p>
+                Number of Passengers:<br>
+                <input type="number" name="count" min="1" max="10" value="1">
+            </p>
+        </fieldset>
+
+        <!-- Preferences (Checkbox) -->
+        <fieldset>
+            <legend>Add-ons</legend>
+            <input type="checkbox" name="meal" id="meal">
+            <label for="meal">Request In-flight Meal</label><br>
+            
+            <input type="checkbox" name="insurance" id="insurance">
+            <label for="insurance">Travel Insurance (Recommended)</label>
+        </fieldset>
+
+        <br>
+        <!-- Command Buttons -->
+        <button type="submit">Search & Book Flight</button>
+        <button type="reset">Clear Selection</button>
+
+    </form>
+
+</body>
+</html>
