@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Logical Operators using Switch Case</title>
+</head>
+<body>
+
+<h2>Logical Operators using Switch Case</h2>
+
+<script>
+    let choice = parseInt(prompt("Choose Operation:\n1. AND (&&)\n2. OR (||)\n3. NOT (!)"));
+
+    switch(choice) {
+
+        case 1:
+            // AND Operator
+            let a1 = true;
+            let b1 = false;
+            let andResult = a1 && b1;
+            document.write("<h3>AND Operator (&&)</h3>");
+            document.write("a = " + a1 + ", b = " + b1 + "<br>");
+            document.write("Result (a && b): " + andResult);
+            break;
+
+        case 2:
+            // OR Operator
+            let a2 = true;
+            let b2 = false;
+            let orResult = a2 || b2;
+            document.write("<h3>OR Operator (||)</h3>");
+            document.write("a = " + a2 + ", b = " + b2 + "<br>");
+            document.write("Result (a || b): " + orResult);
+            break;
+
+        case 3:
+            // NOT Operator
+            let a3 = true;
+            let notResult = !a3;
+            document.write("<h3>NOT Operator (!)</h3>");
+            document.write("a = " + a3 + "<br>");
+            document.write("Result (!a): " + notResult);
+            break;
+
+        default:
+            document.write("Invalid Choice! Please select 1, 2, or 3.");
+    }
+</script>
+
+</body>
+</html>
+
+
